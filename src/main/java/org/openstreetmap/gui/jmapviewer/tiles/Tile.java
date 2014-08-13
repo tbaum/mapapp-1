@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import static java.lang.System.currentTimeMillis;
-import static org.openstreetmap.gui.jmapviewer.Helpers.loadStaticImage;
+import static mapapp.Helpers.loadStaticImage;
 import static org.openstreetmap.gui.jmapviewer.tiles.Tile.State.*;
 
 /**

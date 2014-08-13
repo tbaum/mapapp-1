@@ -25,4 +25,8 @@ public class MyMapMarkerDot extends MapMarkerDot {
         super.setMarked(marked);
         setBackColor(marked ? Color.RED : Color.YELLOW);
     }
+
+    long asVideoTimecode() {
+        return (long) ((point.time - track.tps.first().time) * 1000.0 / source.playbackFactor);
+    }
 }
