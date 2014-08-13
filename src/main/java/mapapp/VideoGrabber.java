@@ -37,6 +37,7 @@ class VideoGrabber implements AutoCloseable {
     FFmpegFrameGrabber grabber = null;
     String openVideo = null;
     long lastpos = 0;
+    private String projectId = "sZBncLZJmbq4nAHmwHoO2Q";
 
     @Inject VideoGrabber(@VirbVideoStore File virbStore, @ExportVideoStore File exportDir) {
         this.virbStore = virbStore;
@@ -99,7 +100,7 @@ class VideoGrabber implements AutoCloseable {
 
         BufferedImage bufferedImage = grabVideoReal(l);
         try {
-            writeTaggedImage(l, img, bufferedImage, null);
+            writeTaggedImage(l, img, bufferedImage, projectId);
         } catch (IOException | SanselanException e) {
             e.printStackTrace();
         }

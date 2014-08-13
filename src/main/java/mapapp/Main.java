@@ -7,6 +7,7 @@ import org.openstreetmap.gui.jmapviewer.tilesources.Lyrk;
 import org.openstreetmap.gui.jmapviewer.tilesources.TileSource;
 
 import java.io.File;
+import java.util.prefs.Preferences;
 
 /**
  * @author tbaum
@@ -20,6 +21,8 @@ public class Main {
     public static final String OSM_CACHE = "/Volumes/VIBR/OSM-Cache";
 
     public static void main(String[] args) throws Exception {
+//        Preferences mapApp = Preferences.userRoot().node("MapApp");
+//        mapApp.get("videoStore");
         try {
             Injector injector = Guice.createInjector(
                     new AbstractModule() {

@@ -4,6 +4,7 @@ import org.xml.sax.SAXException;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -33,9 +34,11 @@ class VirbSourceListPanel extends JPanel {
 
     VirbSourceListPanel() {
         super(new BorderLayout());
+        setBorder(new EtchedBorder());
         list.setCellRenderer(new VirbListCellRenderer());
         list.setSelectionMode(MULTIPLE_INTERVAL_SELECTION);
-        add(new JScrollPane(list));
+        add(new JLabel("Videos from VIRB-Edit"), BorderLayout.NORTH);
+        add(new JScrollPane(list), BorderLayout.CENTER);
 
         load();
     }
